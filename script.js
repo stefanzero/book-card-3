@@ -353,4 +353,6 @@ function render() {
   main.appendChild(fragment);
 }
 
-document.addEventListener("DOMContentLoaded", render);
+// DOMContentLoaded is not fired on Glitch websites
+// document.addEventListener("DOMContentLoaded", render);
+render();
