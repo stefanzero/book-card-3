@@ -1,6 +1,6 @@
-# Book Cards - Version 2
+# Book Cards - Version 3
 
-by [Stefan Musarra](https://github.com/stefanzero/book-card-2)
+by [Stefan Musarra](https://github.com/stefanzero/book-card-3)
 
 ## Description
 
@@ -10,11 +10,25 @@ Example project displaying books as cards with
 - book title
 - author
 
-## Version 2: JavaScript used to create cards from template HTML
+## Version 3: Fetch request added to retrieve data from openLibrary.org
 
-### const books
+### function fetchData
 
-Array of book literal objects
+Async function to return complete JSON response data.
+
+### function extractWorks
+
+Function that extracts most important properties from the response data.
+Calls sortWorksByDate then returns works array.
+
+### function sortWorksByDate
+
+Sorts works array in place in chronological order of published date.
+
+### function fetchBooks
+
+Async function that calls fetchData and extractWorks.
+Returns sorted works array.
 
 ### const article
 

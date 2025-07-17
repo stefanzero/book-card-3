@@ -6,12 +6,13 @@ body {
 }
 .container {
   width: 100%;
-  max-width: 1200px;
+  /* account for 2em padding on each side */
+  width: calc(100vw - 4em);
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2%;
-  row-gap: 3em;
+  padding: 1rem;
   justify-content: space-around;
 }
 header {
@@ -21,11 +22,26 @@ main {
   padding: 2em 0;
   background-color: olivedrab;
 }
+/*
+for small screens, 140px will allow 2 cards per row
+limit card width to 240px
+*/
 article {
-  width: 20%;
+  min-width: 140px;
+  max-width: 240px;
+  width: 40%;
   border: 1px solid black;
   border-radius: 0.5rem;
   overflow: hidden;
+  margin: 1rem 0.5rem;
+  /*
+  This adds a container query to the article element
+  */
+  container-type: inline-size;
+  /*
+  Set the font size to vary between 10px and 16px
+  */
+  font-size: clamp(10px, 1.5cqw, 16px);
 }
 figure {
   margin: 0;
@@ -51,11 +67,11 @@ figcaption {
   text-align: center;
 }
 figcaption h2 {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   margin: 0;
 }
 figcaption h3 {
-  font-size: 1.1rem;
+  font-size: 1.1em;
   margin: 0;
 }
 footer {
